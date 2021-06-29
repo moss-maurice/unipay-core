@@ -9,7 +9,7 @@ use \mmaurice\unipay\core\classes\Session;
 abstract class Plugin implements \mmaurice\unipay\core\interfaces\PluginInterface
 {
     const PLUGIN_NAME = 'pay';
-    const PLUGIN_VERSION = '0.39.4';
+    const PLUGIN_VERSION = '0.0.1';
     const PLUGIN_AUTHOR = 'Viktor Voronkov';
     const PLUGIN_AUTHOR_EMAIL = 'kreexus@yandex.ru';
 
