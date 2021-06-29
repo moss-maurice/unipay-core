@@ -6,7 +6,7 @@ use \mmaurice\modx\Core;
 use \mmaurice\unipay\core\classes\Logger;
 use \mmaurice\unipay\core\classes\Session;
 
-abstract class Plugin implements \mmaurice\unipay\core\interfaces\PluginInterfae
+abstract class Plugin implements \mmaurice\unipay\core\interfaces\PluginInterface
 {
     const PLUGIN_NAME = 'pay';
     const PLUGIN_VERSION = '0.39.4';
@@ -72,7 +72,7 @@ abstract class Plugin implements \mmaurice\unipay\core\interfaces\PluginInterfae
 
         switch ($this->modx->event->name) {
             case 'OnPageNotFound':
-                if (in_array($url, [$this->urlProcessing, $this->urlFail, $this->urlSuccess, $this->urlLink])) {
+                if (in_array($url, [$this->urlProcessing, $this->urlFail, $this->urlSuccess])) {
                     $this->setResponseCode(200);
 
                     if (($url === $this->urlProcessing) and ($this->urlProcessingExternal === 'off')) {
@@ -85,10 +85,6 @@ abstract class Plugin implements \mmaurice\unipay\core\interfaces\PluginInterfae
 
                     if (($url === $this->urlFail) and ($this->urlFailExternal === 'off')) {
                         return $this->makeFail();
-                    }
-
-                    if ($url === $this->urlLink) {
-                        return $this->makeLink();
                     }
                 }
             break;
