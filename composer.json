@@ -1,0 +1,21 @@
+{
+    "name": "mmaurice/unipay-core",
+    "description": "Core for modx 1.2.x online-payment plugins",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Moss Maurice",
+        "email": "kreexus@yandex.ru"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6",
+        "mmaurice/qurl": "^0.1.0",
+        "mmaurice/modx-injector": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mmaurice\\unipay\\core\\": "src/"
+        }
+    }
+}
